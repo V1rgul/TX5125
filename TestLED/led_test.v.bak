@@ -1,0 +1,11 @@
+module LED_TEST (
+	SW,
+	LED
+);
+
+input 		[3:0] 	SW;
+output 		[3:0] 	LED;
+
+assign LED = SW;
+
+endmodule;	

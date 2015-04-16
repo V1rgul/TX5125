@@ -1,0 +1,41 @@
+|test
+OSC_50_B3B => ~NO_FANOUT~
+OSC_50_B4A => ~NO_FANOUT~
+OSC_50_B5B => ~NO_FANOUT~
+OSC_50_B8A => ~NO_FANOUT~
+LED[0] << LED_TEST:comb_3.port2
+LED[1] << LED_TEST:comb_3.port2
+LED[2] << LED_TEST:comb_3.port2
+LED[3] << LED_TEST:comb_3.port2
+KEY[0] => KEY[0].IN1
+KEY[1] => ~NO_FANOUT~
+KEY[2] => ~NO_FANOUT~
+KEY[3] => ~NO_FANOUT~
+RESET_n => ~NO_FANOUT~
+SW[0] => SW[0].IN1
+SW[1] => SW[1].IN1
+SW[2] => SW[2].IN1
+SW[3] => SW[3].IN1
+SI5338_SCL << <GND>
+SI5338_SDA <> <UNC>
+TEMP_CS_n << <GND>
+TEMP_DIN << <GND>
+TEMP_DOUT => ~NO_FANOUT~
+TEMP_SCLK << <GND>
+
+
+|test|LED_TEST:comb_3
+CLK => LED[0]~reg0.CLK
+CLK => LED[1]~reg0.CLK
+CLK => LED[2]~reg0.CLK
+CLK => LED[3]~reg0.CLK
+SW[0] => LED[0]~reg0.DATAIN
+SW[1] => LED[1]~reg0.DATAIN
+SW[2] => LED[2]~reg0.DATAIN
+SW[3] => LED[3]~reg0.DATAIN
+LED[0] <= LED[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+LED[1] <= LED[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+LED[2] <= LED[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+LED[3] <= LED[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
